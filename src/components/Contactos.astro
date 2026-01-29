@@ -1,0 +1,131 @@
+---
+---
+
+<section class="py-16 px-8 bg-gradient-to-br from-gray-50 to-white" id="contacto">
+    <!-- Header -->
+    <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-800 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-1/2 after:transform after:-translate-x-1/2 after:w-16 after:h-1 after:bg-gradient-to-r after:from-indigo-500 after:to-purple-600 after:rounded-md mb-4">
+            Contacto
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+            ¿Tienes un proyecto en mente?. Completa el formulario y te responderé a la brevedad.
+        </p>
+    </div>
+
+    <div class="max-w-2xl mx-auto">
+        <form 
+            action="https://formspree.io/f/xpqrdjjd" 
+            method="POST"
+            class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100"
+        >
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+               
+                <div class="space-y-2">
+                    <label for="name" class="block text-sm font-medium text-gray-700">
+                        Nombre completo
+                    </label>
+                    <input 
+                        type="text" 
+                        id="name"
+                        name="name"
+                        required
+                        placeholder="Nombre Completo"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-700  focus:border-transparent transition-all duration-200 outline-none"
+                    />
+                </div>
+
+                <div class="space-y-2">
+                    <label for="email" class="block text-sm font-medium text-gray-700">
+                        Email
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="ejemplo@ejemplo.com"
+                        class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-700 focus:border-transparent transition-all duration-200 outline-none"
+                    />
+                </div>
+            </div>
+
+            <div class="space-y-2 mb-6">
+                <label for="subject" class="block text-sm font-medium text-gray-700">
+                    Asunto
+                </label>
+                <input 
+                    type="text" 
+                    id="subject"
+                    name="subject"
+                    required
+                    placeholder="Propuesta de proyecto"
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-700  focus:border-transparent transition-all duration-200 outline-none"
+                />
+            </div>
+
+            <!-- Mensaje -->
+            <div class="space-y-2 mb-6">
+                <label for="message" class="block text-sm font-medium text-gray-700">
+                    Mensaje
+                </label>
+                <textarea 
+                    id="message"
+                    name="message"
+                    required
+                    rows="5"
+                    placeholder="Cuéntame sobre tu proyecto..."
+                    class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-cyan-700 focus:border-transparent transition-all duration-200 outline-none resize-none"
+                ></textarea>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-4">
+    
+                <button 
+                    type="submit"
+                    class="flex-1 flex items-center justify-center gap-2 px-6 py-3
+                        bg-gradient-to-r from-cyan-600 to-cyan-800
+                        text-white font-semibold rounded-xl
+                        shadow-md shadow-cyan-500/30
+                        transition-all duration-300
+                        hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan-600/40
+                        active:scale-95
+                        focus:outline-none focus:ring-2 focus:ring-cyan-600 focus:ring-offset-2"
+                >
+                    Enviar mensaje
+                </button>
+
+                <button 
+                    type="reset"
+                    class="px-6 py-3
+                        bg-white text-gray-700 font-semibold rounded-xl
+                        border border-gray-200
+                        transition-all duration-300
+                        hover:bg-gray-100 hover:border-gray-300
+                        active:scale-95
+                        focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                >
+                    Limpiar
+                </button>
+            </div>
+
+        </form>
+
+        <div class="mt-12 text-center">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-8 text-gray-600">
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                    </svg>
+                    <span>agustin.arla.dev@gmail.com</span>
+                </div>
+                
+                <div class="flex items-center gap-2">
+                    <svg class="w-5 h-5 text-indigo-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                    </svg>
+                    <span>Respuesta en 24hs</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

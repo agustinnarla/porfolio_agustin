@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import logoGithub from "../assets/logo-github.svg";
+import logoLinkedin from "../assets/logo-linkedin.svg";
+---
+
+<footer class="border-t border-cyan-700 bg-white">
+  <div class="max-w-6xl mx-auto px-6 py-6
+              flex flex-col sm:flex-row
+              items-center justify-between gap-4">
+
+    <!-- Nombre -->
+    <p class="text-gray-700 font-medium">
+      © {new Date().getFullYear()} · Agustín Arla
+    </p>
+
+    <!-- Redes -->
+    <div class="flex gap-4">
+      <a
+        href="https://github.com/agustinnarla"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-2 rounded-full
+               transition-all duration-300
+               hover:bg-cyan-100 hover:scale-110"
+        aria-label="GitHub"
+      >
+        <Image
+          src={logoGithub}
+          alt="Logo de GitHub"
+          width={22}
+          height={22}
+        />
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/agustin-arla-2a1198304/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="p-2 rounded-full
+               transition-all duration-300
+               hover:bg-cyan-100 hover:scale-110"
+        aria-label="LinkedIn"
+      >
+        <Image
+          src={logoLinkedin}
+          alt="Logo de LinkedIn"
+          width={22}
+          height={22}
+        />
+      </a>
+    </div>
+
+  </div>
+</footer>
