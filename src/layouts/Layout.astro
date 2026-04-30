@@ -1,37 +1,47 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+import Analytics from "@vercel/analytics/astro";
 ---
 
 <!doctype html>
 <html lang="es">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/camera-outline.svg" />
-		<meta name="description" content="Portafolio de Agustín Arla, desarrollador web full-stack especializado en Astro, React y Node.js" />
-		<meta name="keywords" content="Agustín Arla, desarrollador web, Astro, React, Node.js, portafolio" />
-		<meta name="author" content="Agustín Arla" />
-		<meta name="robots" content="index, follow" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Agustín Arla </title>
-		<link rel="stylesheet" href="/src/styles/global.css" />
-		<style>
-			html {
-				scroll-behavior: smooth;
-			}
-			
-			/* Offset para el header sticky */
-			section[id] {
-				scroll-margin-top: 80px;
-			}
-		</style>
-	</head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<title>Agustín Arla | Desarrollador Fullstack Web & Mobile</title>
+
+	<meta name="description" content="Portafolio de Agustín Arla, desarrollador fullstack especializado en Astro, React Native, Expo y Node.js. Proyectos reales, enfoque práctico y aprendizaje continuo." />
+
+	<meta name="keywords" content="Agustín Arla, desarrollador fullstack, Astro, React Native, Expo, Node.js, portfolio developer, mobile developer, web developer" />
+
+	<meta name="author" content="Agustín Arla" />
+	<meta name="robots" content="index, follow" />
+
+	<link rel="icon" type="image/png" href="src/assets/AgusLogo.png" />
+
+	
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Agustín Arla | Desarrollador Fullstack" />
+	<meta property="og:description" content="Desarrollador web y mobile enfocado en crear aplicaciones modernas con Astro, React Native y Node.js." />
+	<meta property="og:image" content="src/assets/AgusLogo.png" />
+	<meta property="og:url" content="https://porfolio-agustin-tau.vercel.app/" />
+
+
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:title" content="Agustín Arla | Desarrollador Fullstack" />
+	<meta name="twitter:description" content="Portafolio con proyectos reales y enfoque en desarrollo web y mobile." />
+	<meta name="twitter:image" content="/AgusLogo.png" />
+
+	<meta name="generator" content={Astro.generator} />
+</head>
 	<body class="bg-white">
 		<Header />
 		<main>
 			<slot />
 		</main>
 		<Footer /> 
+		<Analytics />
 	</body>
 </html>

@@ -9,12 +9,12 @@ import logoLinkedin from "../assets/logo-linkedin.svg";
               flex flex-col sm:flex-row
               items-center justify-between gap-4">
 
-    <!-- Nombre -->
+   
     <p class="text-gray-700 font-medium">
       © {new Date().getFullYear()} · Agustín Arla
     </p>
 
-    <!-- Redes -->
+    
     <div class="flex gap-4">
       <a
         href="https://github.com/agustinnarla"
@@ -22,33 +22,23 @@ import logoLinkedin from "../assets/logo-linkedin.svg";
         rel="noopener noreferrer"
         class="p-2 rounded-full
                transition-all duration-300
-               hover:bg-cyan-100 hover:scale-110"
+               hover:bg-cyan-100 hover:scale-110  text-2xl"
         aria-label="GitHub"
       >
-        <Image
-          src={logoGithub}
-          alt="Logo de GitHub"
-          width={22}
-          height={22}
-        />
+        <i class="fa-brands fa-github"></i>
       </a>
 
       <a
-        href="https://www.linkedin.com/in/agustin-arla-2a1198304/"
+        href="https://www.linkedin.com/in/agustinarla/"
         target="_blank"
         rel="noopener noreferrer"
         class="p-2 rounded-full
                transition-all duration-300
-               hover:bg-cyan-100 hover:scale-110"
+               hover:bg-cyan-100 hover:scale-110 text-2xl"
         aria-label="LinkedIn"
       >
-        <Image
-          src={logoLinkedin}
-          alt="Logo de LinkedIn"
-          width={22}
-          height={22}
-        />
-      </a>
+        <i class="fa-brands fa-linkedin"></i>
+        </a>
     </div>
 
   </div>
