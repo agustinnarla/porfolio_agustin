@@ -4,67 +4,90 @@ import type { ImageMetadata } from "astro";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 interface Card {
-  title: string;
-  description: string;
-  image: ImageMetadata;
-  link: string;
-  enlace: string;
-  technologies: string[];
+    title: string;
+    description: string;
+    image: ImageMetadata;
+    link: string;
+    enlace: string;
+    linkTwitter?: string;
+    technologies: string[];
 }
 
-const { title, description, image, link, enlace, technologies } = Astro.props;
+const { title, description, image, link, enlace, technologies, linkTwitter } =
+    Astro.props;
 ---
 
-<div class="card group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100">
-
-  <div class="relative overflow-hidden h-64 bg-linear-to-br from-gray-50 to-gray-100">
-    <Image
-      src={image}
-      alt={title}
-      width={600}
-      height={600}
-      format="webp"
-      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-    />
-    <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-  </div>
-
-  <div class="p-6">
-    <h3 class="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-indigo-600 transition-colors duration-300">
-      {title}
-    </h3>
-    
-    <p class="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed">
-      {description}
-    </p>
-
-    <div class="flex flex-wrap gap-2 mb-5">
-      {technologies.map((tech: string) => (
-        <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-medium rounded-full border border-indigo-100">
-          {tech}
-        </span>
-      ))}
+<div
+    class="card group bg-white rounded-2xl shadow-xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 border border-gray-100"
+>
+    <div
+        class="relative overflow-hidden h-64 bg-linear-to-br from-gray-50 to-gray-100"
+    >
+        <Image
+            src={image}
+            alt={title}
+            width={600}
+            height={600}
+            format="webp"
+            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+        />
+        <div
+            class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        >
+        </div>
     </div>
-    <a 
-      href={enlace} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-4 py-2 bg-[#00a0c2] text-white text-sm font-semibold rounded-lg transition-all duration-300  hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2  focus:ring-offset-2"
-    >
-     
-<i class="fa-solid fa-camera"></i>
-      Ver Demo
-    </a>
-   
-    <a 
-      href={link} 
-      target="_blank" 
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-2 px-4 py-2 
-       text-white text-sm font-semibold rounded-lg bg-[#00a0c2] transition-all duration-300 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-    >
-     <i class="fa-brands fa-github"></i>
-      Ver en GitHub
-    </a>
-  </div>
+
+    <div class="p-6">
+        <h3
+            class="text-xl font-bold text-gray-800 mb-3 line-clamp-2 group-hover:text-indigo-600 transition-colors duration-300"
+        >
+            {title}
+        </h3>
+
+        <p class="text-gray-600 text-sm mb-4 line-clamp-3 leading-relaxed">
+            {description}
+        </p>
+
+        <div class="flex flex-wrap gap-2 mb-5">
+            {
+                technologies.map((tech: string) => (
+                    <span class="px-3 py-1 bg-indigo-50 text-indigo-600 text-xs font-medium rounded-full border border-indigo-100">
+                        {tech}
+                    </span>
+                ))
+            }
+        </div>
+        <a
+            href={enlace}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 mr-2 bg-[#00a0c2] text-white text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2"
+        >
+            <i class="fa-solid fa-camera"></i>
+            Ver Demo
+        </a>
+
+        <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 px-4 py-2 mr-2 text-white text-sm font-semibold rounded-lg bg-[#00a0c2] transition-all duration-300 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        >
+            <i class="fa-brands fa-github"></i>
+            Ver en GitHub
+        </a>
+        {
+            linkTwitter && (
+                <a
+                    href={linkTwitter}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-4 py-2 mr-2 text-white text-sm font-semibold rounded-lg bg-[#00a0c2] transition-all duration-300 hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                >
+                    <i class="fa-brands fa-x" />
+                    Ver en Twitter
+                </a>
+            )
+        }
+    </div>
 </div>

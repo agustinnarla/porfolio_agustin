@@ -1,23 +1,52 @@
 ---
 import Card from "./Card.astro";
-import fotoColegio from '../assets/logo-huerto.png';
-import fotoFinanzas from '../assets/logo-finanzas.png';
-import fotoVibbes from '../assets/thavibbescompany.webp';
+import fotoColegio from "../assets/logo-huerto.png";
+import fotoFinanzas from "../assets/logo-finanzas.png";
+import fotoVibbes from "../assets/thavibbescompany.webp";
+import fotoViora from "../assets/viora-logo.png";
+import fotoIndarra from "../assets/indarra-login.jpeg";
 ---
 
-<section class="py-16 px-8 bg-linear-to-br from-gray-50 to-white" id="proyectos">
-   
+<section
+    class="py-16 px-8 bg-linear-to-br from-gray-50 to-white"
+    id="proyectos"
+>
     <div class="text-center mb-16">
-         <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                Proyectos
-            </h2>
+        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
+            Proyectos
+        </h2>
         <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-            Algunos de mis proyectos más destacados donde he aplicado diferentes tecnologías y soluciones creativas
+            Algunos de mis proyectos más destacados donde he aplicado diferentes
+            tecnologías y soluciones creativas
         </p>
     </div>
 
-  
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto">
+    <div class="text-center">
+        <h3 class="text-3xl lg:text-3xl font-bold text-gray-800 mb-4">
+            Proyectos Movile
+        </h3>
+    </div>
+    <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
+    >
+        <Card
+            title="Indarra v1.0"
+            description="Sistema de gestión de planes de gimnasio, permite gestionar planes y entrenamientos propios."
+            image={fotoIndarra}
+            enlace="https://youtube.com/shorts/h_xxbB0ZyPU?feature=share"
+            link="https://github.com/agustinnarla/Indarra"
+            linkTwitter="https://x.com/agusmobiledev/status/2052497798369546533"
+            technologies={["React Native", "Expo", "Node.js", "PostgreSQL"]}
+        />
+        <Card
+            title="Viora (desarrollo en curso)"
+            description="Aplicación para gestionar tus viajes con los amigos, cuenta con organización de destinos, actividades, gastos."
+            image={fotoViora}
+            enlace="https://x.com/agusmobiledev/status/2056857216888545655"
+            link="https://github.com/agustinnarla/Viora"
+            linkTwitter="https://x.com/agusmobiledev/status/2056857216888545655"
+            technologies={["React-Native", "Expo", "Supabase"]}
+        />
         <Card
             title="Gestión Colegio Nuestra Señora del Huerto"
             description="Sistema de gestión integral para el colegio Nuestra Señora del Huerto, realizado como trabajo final para la carrera Analista de Sistema en el Colegio Universitario IES21. Incluye módulos de administración, gestión de alumnos y personal."
@@ -26,6 +55,15 @@ import fotoVibbes from '../assets/thavibbescompany.webp';
             link="https://github.com/agustinnarla/GestionColegio"
             technologies={["React Native", "Node.js", "PostgreSQL"]}
         />
+    </div>
+    <div class="text-center mt-10">
+        <h3 class="text-3xl lg:text-3xl font-bold text-gray-800 mb-4">
+            Proyectos Web
+        </h3>
+    </div>
+    <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto mt-10"
+    >
         <Card
             title="Finanzas Agustin"
             description="Aplicación web moderna para gestionar finanzas personales con dashboard interactivo, categorización de gastos, reportes detallados y visualización de datos en tiempo real."
@@ -45,22 +83,22 @@ import fotoVibbes from '../assets/thavibbescompany.webp';
     </div>
 
     <div class="text-center mt-12">
-        <a 
-            href="https://github.com/agustinnarla" 
-            target="_blank" 
+        <a
+            href="https://github.com/agustinnarla"
+            target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-[#00a0c2] text-black font-semibold rounded-lg transition-all duration-300 hover:bg-[#00a0c2] hover:text-white hover:shadow-lg hover:scale-105 focus:outline-none "
+            class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-[#00a0c2] text-black font-semibold rounded-lg transition-all duration-300 hover:bg-[#00a0c2] hover:text-white hover:shadow-lg hover:scale-105 focus:outline-none"
         >
             <i class="fa-brands fa-github"></i>
             Ver más proyectos en GitHub
         </a>
     </div>
     <div class="text-center mt-12">
-        <a 
-            href="https://x.com/agusmobiledev" 
-            target="_blank" 
+        <a
+            href="https://x.com/agusmobiledev"
+            target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-[#00a0c2] text-black font-semibold rounded-lg transition-all duration-300 hover:bg-[#00a0c2] hover:text-white hover:shadow-lg hover:scale-105 focus:outline-none "
+            class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-[#00a0c2] text-black font-semibold rounded-lg transition-all duration-300 hover:bg-[#00a0c2] hover:text-white hover:shadow-lg hover:scale-105 focus:outline-none"
         >
             <i class="fa-brands fa-twitter"></i>
             Ver más proyectos en X
