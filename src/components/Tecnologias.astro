@@ -1,85 +1,36 @@
 ---
-import { Image } from "astro:assets";
-import logoReact from "../assets/logo-react.svg";
-import logoAstro from '../assets/astro-icon-dark.svg'
-import logoTailwind from '../assets/logo-tailwind.svg'
-import logoNodejs from '../assets/logo-nodejs.svg'
-import logoJavascript from '../assets/logo-javascript.svg'
+import { Code, Server, Smartphone, Database, Palette } from "lucide-astro";
+
+const technologies = [
+  { name: "React Native", icon: Smartphone, description: "Mobile" },
+  { name: "Astro", icon: Code, description: "Framework" },
+  { name: "Tailwind CSS", icon: Palette, description: "Estilos" },
+  { name: "Node.js", icon: Server, description: "Backend" },
+  { name: "PostgreSQL", icon: Database, description: "Base de datos" },
+];
 ---
 
-<section id="tecnologias" class="py-20 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
-        <!-- Header -->
-        <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-                Tecnologías
-            </h2>
-            <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                Las herramientas que uso para crear soluciones modernas y eficientes
-            </p>
-        </div>
-
-        <!-- Tech Grid -->
-        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
-            <div class="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-cyan-50 transition-colors duration-200 group">
-                <div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
-                    <Image
-                        src={logoReact} 
-                        alt="Logo React"
-                        width={40}
-                        height={40}
-                    />
-                </div>
-                <p class="text-sm font-medium text-gray-700">React Native</p>
-            </div>
-
-            <div class="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-cyan-50 transition-colors duration-200 group">
-                <div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
-                    <Image
-                        src={logoAstro} 
-                        alt="Logo Astro"
-                        width={40}
-                        height={40}
-                    />
-                </div>
-                <p class="text-sm font-medium text-gray-700">Astro</p>
-            </div>
-
-            <div class="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-cyan-50 transition-colors duration-200 group">
-                <div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
-                    <Image
-                        src={logoTailwind} 
-                        alt="Logo Tailwind"
-                        width={40}
-                        height={40}
-                    />
-                </div>
-                <p class="text-sm font-medium text-gray-700">Tailwind</p>
-            </div>
-
-            <div class="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-cyan-50 transition-colors duration-200 group">
-                <div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
-                    <Image
-                        src={logoNodejs} 
-                        alt="Logo Node"
-                        width={40}
-                        height={40}
-                    />
-                </div>
-                <p class="text-sm font-medium text-gray-700">Node.js</p>
-            </div>
-
-            <div class="flex flex-col items-center gap-3 p-6 rounded-xl hover:bg-cyan-50 transition-colors duration-200 group">
-                <div class="w-16 h-16 flex items-center justify-center bg-white rounded-lg shadow-sm group-hover:shadow-md transition-shadow">
-                    <Image
-                        src={logoJavascript} 
-                        alt="Logo Javascript"
-                        width={40}
-                        height={40}
-                    />
-                </div>
-                <p class="text-sm font-medium text-gray-700">JavaScript</p>
-            </div>
-        </div>
+<section id="tecnologias" class="py-24 bg-[#FAFAF9]">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-16">
+      <p class="text-sm font-medium tracking-widest uppercase text-[#A8A29E] mb-3">
+        Stack
+      </p>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight" style="font-family: var(--font-display);">
+        Tecnologías
+      </h2>
     </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+      {technologies.map((tech) => (
+        <div class="group p-6 rounded-xl border border-[#E7E5E4] hover:border-[#D6D3D1] hover:shadow-sm transition-all duration-300">
+          <div class="w-10 h-10 flex items-center justify-center mb-4 text-[#78716C] group-hover:text-[#1C1917] transition-colors">
+            <tech.icon class="w-5 h-5" />
+          </div>
+          <p class="text-sm font-semibold text-[#1C1917] mb-1">{tech.name}</p>
+          <p class="text-xs text-[#A8A29E]">{tech.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>

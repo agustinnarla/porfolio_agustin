@@ -1,107 +1,108 @@
 ---
-import Card from "./Card.astro";
-import fotoColegio from "../assets/logo-huerto.png";
-import fotoFinanzas from "../assets/logo-finanzas.png";
-import fotoVibbes from "../assets/thavibbescompany.webp";
-import fotoViora from "../assets/viora.jpg";
-import fotoIndarra from "../assets/portada.jpg";
+import { ExternalLink, Github } from "lucide-astro";
+
+const projects = [
+  {
+    title: "Gestión Nuestra Señora del Huerto",
+    description:
+      "Plataforma omnicanal para la digitalización de instituciones educativas. Eliminación total del uso de papel con módulos de asistencia, amonestaciones, notas y observaciones en tiempo real.",
+    image: "/images/appColegio.webp",
+    tags: ["React Native", "Expo", "Node.js", "PostgreSQL"],
+    liveUrl: "https://youtu.be/1ia6A2C0qoc",
+    githubUrl: "https://github.com/agustinnarla/GestionColegio",
+  },
+  {
+    title: "Landing Tha Vibbes Company",
+    description:
+      "Landing page oficial para crew de danza urbana de Córdoba, representantes de Argentina en el mundial de Hip Hop International 2026. Estética de alto impacto visual y cultura urbana.",
+    image: "/images/landingThaVibbes.webp",
+    tags: ["React Native", "Expo", "PostgreSQL"],
+    liveUrl: "https://tha-vibbes-company.vercel.app/",
+    githubUrl: "https://github.com/agustinnarla/ThaVibbesCompany",
+  },
+  {
+    title: "Landing Estudio Jurídico",
+    description:
+      "Landing page enfocada en transmitir solidez y profesionalismo. Arquitectura de información clara, paleta institucional y tipografía limpia para resaltar trayectoria.",
+    image: "/images/landingAbogados.webp",
+    tags: ["Astro", "Tailwind"],
+    liveUrl: "https://abogado-landing-alpha.vercel.app/",
+    githubUrl: "https://github.com/agustinnarla/AbogadoLanding",
+  },
+  {
+    title: "Indarra",
+    description:
+      "Aplicación móvil para seguimiento personalizado de rutinas de ejercicio. Módulo avanzado de analítica para registrar progreso y evaluar evolución de cargas.",
+    image: "/images/appIndarra.webp",
+    tags: ["React Native", "Expo", "PostgreSQL"],
+    liveUrl: "https://youtube.com/shorts/h_xxbB0ZyPU",
+    githubUrl: "https://github.com/agustinnarla/Indarra.git",
+  },
+];
 ---
 
-<section
-    class="py-16 px-8 bg-linear-to-br from-gray-50 to-white"
-    id="proyectos"
->
-    <div class="text-center mb-16">
-        <h2 class="text-3xl lg:text-4xl font-bold text-gray-800 mb-4">
-            Proyectos
-        </h2>
-        <p class="mt-6 text-lg text-gray-600 max-w-2xl mx-auto">
-            Algunos de mis proyectos más destacados donde he aplicado diferentes
-            tecnologías y soluciones creativas
-        </p>
+<section id="proyectos" class="py-24">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="mb-16">
+      <p class="text-sm font-medium tracking-widest uppercase text-[#A8A29E] mb-3">
+        Proyectos
+      </p>
+      <h2 class="text-3xl lg:text-4xl font-bold tracking-tight" style="font-family: var(--font-display);">
+        Trabajos recientes
+      </h2>
     </div>
 
-    <div class="text-center">
-        <h3 class="text-3xl lg:text-3xl font-bold text-gray-800 mb-4">
-            Proyectos Movile
-        </h3>
-    </div>
-    <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto"
-    >
-        <Card
-            title="Indarra v1.0"
-            description="Sistema de gestión de planes de gimnasio, permite gestionar planes y entrenamientos propios."
-            image={fotoIndarra}
-            enlace="https://youtube.com/shorts/h_xxbB0ZyPU?feature=share"
-            link="https://github.com/agustinnarla/Indarra"
-            linkTwitter="https://x.com/agusmobiledev/status/2052497798369546533"
-            technologies={["React Native", "Expo", "Node.js", "PostgreSQL"]}
-        />
-        <Card
-            title="Viora (desarrollo en curso)"
-            description="Aplicación para gestionar tus viajes con los amigos, cuenta con organización de destinos, actividades, gastos."
-            image={fotoViora}
-            enlace="https://x.com/agusmobiledev/status/2056857216888545655"
-            link="https://github.com/agustinnarla/Viora"
-            linkTwitter="https://x.com/agusmobiledev/status/2056857216888545655"
-            technologies={["React-Native", "Expo", "Supabase"]}
-        />
-        <Card
-            title="Gestión Colegio Nuestra Señora del Huerto"
-            description="Sistema de gestión integral para el colegio Nuestra Señora del Huerto, realizado como trabajo final para la carrera Analista de Sistema en el Colegio Universitario IES21. Incluye módulos de administración, gestión de alumnos y personal."
-            image={fotoColegio}
-            enlace="https://youtu.be/1ia6A2C0qoc"
-            link="https://github.com/agustinnarla/GestionColegio"
-            technologies={["React Native", "Node.js", "PostgreSQL"]}
-        />
-    </div>
-    <div class="text-center mt-10">
-        <h3 class="text-3xl lg:text-3xl font-bold text-gray-800 mb-4">
-            Proyectos Web
-        </h3>
-    </div>
-    <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10 max-w-6xl mx-auto mt-10"
-    >
-        <Card
-            title="Finanzas Agustin"
-            description="Aplicación web moderna para gestionar finanzas personales con dashboard interactivo, categorización de gastos, reportes detallados y visualización de datos en tiempo real."
-            image={fotoFinanzas}
-            enlace="https://youtu.be/7q9x0MM5I3I"
-            link="https://github.com/agustinnarla/finanzas-agus"
-            technologies={["React", "Node.js", "PostgreSQL"]}
-        />
-        <Card
-            title="Tha Vibbes Company"
-            description="Landing Page para un grupo de baile, de Córdoba, Argentina,  la cual nos va a representar en el mundial de hip hop HHI 2026. "
-            image={fotoVibbes}
-            enlace="https://tha-vibbes-company.vercel.app/"
-            link="https://github.com/agustinnarla/ThaVibbesCompany"
-            technologies={["Astro", "TypeScript"]}
-        />
-    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {projects.map((project) => (
+        <article class="group rounded-xl border border-[#E7E5E4] overflow-hidden hover:border-[#D6D3D1] hover:shadow-sm transition-all duration-300">
+          <div class="relative h-52 overflow-hidden bg-[#F5F5F4]">
+            <img
+              src={project.image}
+              alt={project.title}
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              loading="lazy"
+            />
+          </div>
 
-    <div class="text-center mt-12">
-        <a
-            href="https://github.com/agustinnarla"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-[#00a0c2] text-black font-semibold rounded-lg transition-all duration-300 hover:bg-[#00a0c2] hover:text-white hover:shadow-lg hover:scale-105 focus:outline-none"
-        >
-            <i class="fa-brands fa-github"></i>
-            Ver más proyectos en GitHub
-        </a>
+          <div class="p-6">
+            <h3 class="text-lg font-bold text-[#1C1917] mb-2">
+              {project.title}
+            </h3>
+            <p class="text-sm text-[#78716C] leading-relaxed mb-4">
+              {project.description}
+            </p>
+
+            <div class="flex flex-wrap gap-2 mb-5">
+              {project.tags.map((tag) => (
+                <span class="px-2.5 py-0.5 text-xs font-medium text-[#78716C] border border-[#E7E5E4] rounded-full">
+                  {tag}
+                </span>
+              ))}
+            </div>
+
+            <div class="flex items-center gap-4">
+              <a
+                href={project.liveUrl}
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-[#78716C] hover:text-[#1C1917] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <ExternalLink class="w-3.5 h-3.5" />
+                Demo
+              </a>
+              <a
+                href={project.githubUrl}
+                class="inline-flex items-center gap-1.5 text-sm font-medium text-[#78716C] hover:text-[#1C1917] transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github class="w-3.5 h-3.5" />
+                Código
+              </a>
+            </div>
+          </div>
+        </article>
+      ))}
     </div>
-    <div class="text-center mt-12">
-        <a
-            href="https://x.com/agusmobiledev"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-2 px-6 py-3 bg-white border-2 border-[#00a0c2] text-black font-semibold rounded-lg transition-all duration-300 hover:bg-[#00a0c2] hover:text-white hover:shadow-lg hover:scale-105 focus:outline-none"
-        >
-            <i class="fa-brands fa-twitter"></i>
-            Ver más proyectos en X
-        </a>
-    </div>
+  </div>
 </section>

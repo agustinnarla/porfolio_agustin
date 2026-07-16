@@ -2,46 +2,82 @@
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import Analytics from "@vercel/analytics/astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Agustín Arla | Desarrollador Fullstack",
+  description = "Portafolio de Agustín Arla, desarrollador fullstack especializado en Astro, React Native, Expo y Node.js."
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const ogImageURL = new URL("/AgusLogo.png", Astro.site).href;
 ---
 
 <!doctype html>
 <html lang="es">
-	<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<title>Agustín Arla | Desarrollador Fullstack Web & Mobile</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-	<meta name="description" content="Portafolio de Agustín Arla, desarrollador fullstack especializado en Astro, React Native, Expo y Node.js. Proyectos reales, enfoque práctico y aprendizaje continuo." />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Agustín Arla" />
+    <meta name="robots" content="index, follow" />
+    <meta name="generator" content={Astro.generator} />
 
-	<meta name="keywords" content="Agustín Arla, desarrollador fullstack, Astro, React Native, Expo, Node.js, portfolio developer, mobile developer, web developer" />
+    <link rel="canonical" href={canonicalURL.href} />
+    <link rel="icon" type="image/png" href="/AgusLogo.png" />
 
-	<meta name="author" content="Agustín Arla" />
-	<meta name="robots" content="index, follow" />
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:locale" content="es_AR" />
 
-	<link rel="icon" type="image/png" href="/AgusLogo.png" />
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
 
-	
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="Agustín Arla | Desarrollador Fullstack" />
-	<meta property="og:description" content="Desarrollador web y mobile enfocado en crear aplicaciones modernas con Astro, React Native y Node.js." />
-	<meta property="og:image" content="/AgusLogo.png" />
-	<meta property="og:url" content="https://porfolio-agustin-tau.vercel.app/" />
-
-
-	<meta name="twitter:card" content="summary_large_image" />
-	<meta name="twitter:title" content="Agustín Arla | Desarrollador Fullstack" />
-	<meta name="twitter:description" content="Portafolio con proyectos reales y enfoque en desarrollo web y mobile." />
-	<meta name="twitter:image" content="/AgusLogo.png" />
-
-	<meta name="generator" content={Astro.generator} />
-</head>
-	<body class="bg-white">
-		<Header />
-		<main>
-			<slot />
-		</main>
-		<Footer /> 
-		<Analytics />
-	</body>
+    <!-- JSON-LD -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Agustín Arla",
+      "jobTitle": "Desarrollador Fullstack",
+      "url": canonicalURL.href,
+      "image": ogImageURL,
+      "sameAs": [
+        "https://github.com/agustinnarla",
+        "https://www.linkedin.com/in/agustinarla/"
+      ],
+      "knowsAbout": [
+        "Astro", "React Native", "Expo", "Node.js",
+        "JavaScript", "Tailwind CSS", "PostgreSQL"
+      ],
+      "email": "agustin.arla.dev@gmail.com"
+    })} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <Analytics />
+  </body>
 </html>

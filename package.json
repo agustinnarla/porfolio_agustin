@@ -9,11 +9,24 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^7.2.0",
+    "@astrojs/sitemap": "^3.7.3",
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/vite": "^4.1.18",
     "@vercel/analytics": "^2.0.1",
-    "astro": "^5.16.8",
+    "astro": "^7.1.0",
+    "lucide-astro": "^0.556.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.1.18"
-  }
+  },
+  "description": "```sh npm create astro@latest -- --template basics ```",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agustinnarla/porfolio_agustin.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/agustinnarla/porfolio_agustin/issues"
+  },
+  "homepage": "https://github.com/agustinnarla/porfolio_agustin#readme"
 }

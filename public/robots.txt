@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://porfolio-agustin-tau.vercel.app/sitemap-index.xml

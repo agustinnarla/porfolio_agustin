@@ -1,45 +1,32 @@
 ---
-import { Image } from "astro:assets";
-import logoGithub from "../assets/logo-github.svg";
-import logoLinkedin from "../assets/logo-linkedin.svg";
+import { Github, Linkedin } from "lucide-astro";
 ---
 
-<footer class="border-t border-cyan-700 bg-white">
-  <div class="max-w-6xl mx-auto px-6 py-6
-              flex flex-col sm:flex-row
-              items-center justify-between gap-4">
-
-   
-    <p class="text-gray-700 font-medium">
-      © {new Date().getFullYear()} · Agustín Arla
+<footer class="border-t border-[#E7E5E4]">
+  <div class="max-w-5xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+    <p class="text-sm text-[#A8A29E]">
+      © {new Date().getFullYear()} Agustín Arla
     </p>
 
-    
-    <div class="flex gap-4">
+    <div class="flex gap-1">
       <a
         href="https://github.com/agustinnarla"
         target="_blank"
         rel="noopener noreferrer"
-        class="p-2 rounded-full
-               transition-all duration-300
-               hover:bg-cyan-100 hover:scale-110  text-2xl"
+        class="p-2 text-[#A8A29E] hover:text-[#1C1917] transition-colors rounded-lg hover:bg-[#F5F5F4]"
         aria-label="GitHub"
       >
-        <i class="fa-brands fa-github"></i>
+        <Github class="w-4 h-4" />
       </a>
-
       <a
         href="https://www.linkedin.com/in/agustinarla/"
         target="_blank"
         rel="noopener noreferrer"
-        class="p-2 rounded-full
-               transition-all duration-300
-               hover:bg-cyan-100 hover:scale-110 text-2xl"
+        class="p-2 text-[#A8A29E] hover:text-[#1C1917] transition-colors rounded-lg hover:bg-[#F5F5F4]"
         aria-label="LinkedIn"
       >
-        <i class="fa-brands fa-linkedin"></i>
-        </a>
+        <Linkedin class="w-4 h-4" />
+      </a>
     </div>
-
   </div>
 </footer>
